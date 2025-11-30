@@ -54,9 +54,9 @@ To validate the processor's logic and performance, a **Population Count (Popcoun
 
 The design was simulated using `iverilog`. Below is the execution log verifying the correct output for specific test vectors:
 
-````text
+```text
 ========== SIMULATION RESULTS ==========
-Total Cycle Count: 4387
+Total Cycle Count: 4174
 
 Index | ARRAY      | Expected | Calculated | Cycles | Status
 ------|------------|----------|------------|--------|------
@@ -65,15 +65,28 @@ Index | ARRAY      | Expected | Calculated | Cycles | Status
     2 | 0x00000200 |        1 |          1 |    206 | PASS
     3 | 0x00400000 |        1 |          1 |    206 | PASS
     4 | 0x80000000 |        1 |          1 |    206 | PASS
-    5 | 0x51C06460 |       10 |         10 |    215 | PASS
-    6 | 0xDEC287D9 |       18 |         18 |    223 | PASS
-    7 | 0x6C896594 |       14 |         14 |    219 | PASS
+    5 | 0x51c06460 |       10 |         10 |    215 | PASS
+    6 | 0xdec287d9 |       18 |         18 |    223 | PASS
+    7 | 0x6c896594 |       14 |         14 |    219 | PASS
     8 | 0x99999999 |       16 |         16 |    221 | PASS
-    9 | 0xFFFFFFFF |       32 |         32 |    237 | PASS
-   10 | 0x7FFFFFFF |       31 |         31 |    236 | PASS
-   11 | 0xFFFFFFFE |       31 |         31 |    236 | PASS
-   12 | 0xC7B52169 |       16 |         16 |    221 | PASS
-...
+    9 | 0xffffffff |       32 |         32 |    237 | PASS
+   10 | 0x7fffffff |       31 |         31 |    236 | PASS
+   11 | 0xfffffffe |       31 |         31 |    236 | PASS
+   12 | 0xc7b52169 |       16 |         16 |    221 | PASS
+   13 | 0x8ceff731 |       20 |         20 |    225 | PASS
+   14 | 0xa550921e |       13 |         13 |    218 | PASS
+   15 | 0x0db01f33 |       15 |         15 |    220 | PASS
+   16 | 0x24bb7b48 |       16 |         16 |    221 | PASS
+   17 | 0x98513914 |       12 |         12 |    217 | PASS
+   18 | 0xcd76ed30 |       18 |         18 |    223 | PASS
+   19 | 0xc0000003 |        4 |          4 |    209 | PASS
+
+========== SPECIAL CASES ==========
+0xFFFFFFFF (index 9) :  237 cycles
+0x80000000 (index 4) :  206 cycles
+0xC7B52169 (index 12):  221 cycles
+```
+
 ## 💻 Datapath Diagram
 
 The processor architecture follows the standard Single-Cycle RISC-V implementation involving Instruction Memory, Register File, ALU, and Data Memory.
@@ -83,28 +96,33 @@ The processor architecture follows the standard Single-Cycle RISC-V implementati
 ## 🔧 How to Run
 
 ### Prerequisites
-* **Icarus Verilog** (for compilation and simulation)
-* **GTKWave** (for waveform viewing)
+
+-   **Icarus Verilog** (for compilation and simulation)
+-   **GTKWave** (for waveform viewing)
 
 ### Simulation Steps
 
 1.  **Clone the repository:**
+
     ```bash
     git clone https://github.com/sergenyalc1n/RISCV_32-bit_Single_Cycle_Processor.git
     cd RISCV-Single_cycle_processor
     ```
 
 2.  **Compile the design:**
+
     ```bash
     cd tbs
     iverilog -o riscvsingle_tb.vvp riscvsingle_tb.v
     ```
 
 3.  **Run the simulation:**
+
     ```bash
     vvp riscvsingle_tb.vvp
     ```
-    *This will execute the population count algorithm and display the pass/fail status in the terminal.*
+
+    _This will execute the population count algorithm and display the pass/fail status in the terminal._
 
 4.  **View waveforms (Optional):**
     ```bash
@@ -112,5 +130,9 @@ The processor architecture follows the standard Single-Cycle RISC-V implementati
     ```
 
 ---
-*Developed as a Computer Organization coursework project.*
-````
+
+_Developed as a Computer Organization coursework project._
+
+```
+
+```
