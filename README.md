@@ -132,7 +132,3 @@ The processor architecture follows the standard Single-Cycle RISC-V implementati
 ---
 
 _Developed as a Computer Organization coursework project._
-
-```
-
-```
