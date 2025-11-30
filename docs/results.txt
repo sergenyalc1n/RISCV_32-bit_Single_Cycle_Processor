@@ -1,0 +1,30 @@
+Index | ARRAY      | Beklenen | Hesaplanan | Cevrim | Durum
+------|------------|----------|------------|--------|------
+    0 | 0x00000000 |        0 |          0 |    201 | PASS
+    1 | 0x00000001 |        1 |          1 |    206 | PASS
+    2 | 0x00000200 |        1 |          1 |    206 | PASS
+    3 | 0x00400000 |        1 |          1 |    206 | PASS
+    4 | 0x80000000 |        1 |          1 |    206 | PASS
+    5 | 0x51c06460 |       10 |         10 |    215 | PASS
+    6 | 0xdec287d9 |       18 |         18 |    223 | PASS
+    7 | 0x6c896594 |       14 |         14 |    219 | PASS
+    8 | 0x99999999 |       16 |         16 |    221 | PASS
+    9 | 0xffffffff |       32 |         32 |    237 | PASS
+   10 | 0x7fffffff |       31 |         31 |    236 | PASS
+   11 | 0xfffffffe |       31 |         31 |    236 | PASS
+   12 | 0xc7b52169 |       16 |         16 |    221 | PASS
+   13 | 0x8ceff731 |       20 |         20 |    225 | PASS
+   14 | 0xa550921e |       13 |         13 |    218 | PASS
+   15 | 0x0db01f33 |       15 |         15 |    220 | PASS
+   16 | 0x24bb7b48 |       16 |         16 |    221 | PASS
+   17 | 0x98513914 |       12 |         12 |    217 | PASS
+   18 | 0xcd76ed30 |       18 |         18 |    223 | PASS
+   19 | 0xc0000003 |        4 |          4 |    209 | PASS
+
+========== SONUCLAR ==========
+Toplam cevrim sayisi:        4174
+
+========== OZEL DURUMLAR ==========
+0xFFFFFFFF (index 9) :        237 cevrim
+0x80000000 (index 4) :        206 cevrim
+0xC7B52169 (index 12):        221 cevrim
